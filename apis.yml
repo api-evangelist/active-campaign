@@ -1,0 +1,61 @@
+aid: active-campaign
+name: ActiveCampaign
+description: >-
+  ActiveCampaign is a customer experience automation platform that combines
+  email marketing, marketing automation, CRM, sales engagement, and
+  transactional messaging for small and mid-sized businesses. The
+  ActiveCampaign API v3 is a REST/JSON API organized around resources such as
+  contacts, deals, automations, campaigns, lists, and tags, with per-account
+  base URLs of the form youraccountname.api-us1.com/api/3. Authentication is
+  performed via an Api-Token HTTP header containing the account API key.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Marketing Automation
+  - Email Marketing
+  - CRM
+  - Customer Experience Automation
+  - Sales Engagement
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/active-campaign/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: active-campaign:api-v3
+    name: ActiveCampaign API v3
+    description: >-
+      REST API for managing contacts, deals, automations, campaigns, lists,
+      tags, custom fields, and ecommerce data in ActiveCampaign. Each account
+      uses its own base URL ({account}.api-us1.com/api/3) and authenticates
+      via an Api-Token header.
+    humanURL: https://developers.activecampaign.com/reference/overview
+    baseURL: https://youraccountname.api-us1.com/api/3
+    tags:
+      - Marketing Automation
+      - Email Marketing
+      - CRM
+      - REST API
+    properties:
+      - type: Documentation
+        url: https://developers.activecampaign.com/reference/overview
+      - type: Authentication
+        url: https://developers.activecampaign.com/reference/authentication
+      - type: Base URL
+        url: https://developers.activecampaign.com/reference/url
+      - type: Postman Collection
+        url: https://www.postman.com/acdevrel/activecampaign-developer-relations/collection/ju5a59q/activecampaign-api-v3
+common:
+  - type: Website
+    url: https://www.activecampaign.com
+  - type: Documentation
+    url: https://developers.activecampaign.com
+  - type: Help Center
+    url: https://help.activecampaign.com
+  - type: Pricing
+    url: https://www.activecampaign.com/pricing/
+  - type: Sign Up
+    url: https://www.activecampaign.com/signup/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
