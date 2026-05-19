@@ -46,6 +46,10 @@ apis:
       - type: Postman Collection
         url: https://www.postman.com/acdevrel/activecampaign-developer-relations/collection/ju5a59q/activecampaign-api-v3
 common:
+  - type: GitHubOrganization
+    url: https://github.com/ActiveCampaign
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/activecampaign
   - type: Website
     url: https://www.activecampaign.com
   - type: Documentation
