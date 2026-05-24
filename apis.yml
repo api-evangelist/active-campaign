@@ -60,6 +60,8 @@ common:
     url: https://www.activecampaign.com/pricing/
   - type: SignUp
     url: https://www.activecampaign.com/signup/
+  - type: LLMsTxt
+    url: https://developers.activecampaign.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
