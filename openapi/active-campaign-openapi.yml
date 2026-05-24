@@ -1,0 +1,154 @@
+openapi: 3.1.0
+info:
+  title: ActiveCampaign API
+  version: "3"
+  description: >-
+    ActiveCampaign's REST API (version 3) for marketing automation, CRM, sales
+    pipelines, and customer engagement. Covers contacts, lists, deals,
+    campaigns, segments, custom fields, variables, broadcasts, and bulk
+    operations. Authentication is via an account-specific API key supplied in
+    the `Api-Token` header (the developer portal also references `X-Auth-Token`).
+  contact:
+    name: ActiveCampaign Developers
+    url: https://developers.activecampaign.com
+servers:
+  - url: https://{account}.api-us1.com
+    description: Account-scoped ActiveCampaign API server
+    variables:
+      account:
+        default: example
+        description: Your ActiveCampaign account subdomain
+tags:
+  - name: Contacts
+  - name: Custom Fields
+  - name: Deals
+  - name: Lists
+  - name: Campaigns
+  - name: Variables
+  - name: Bulk
+  - name: Segments
+  - name: Broadcasts
+paths:
+  /api/3/contacts:
+    get:
+      summary: List, search, and filter contacts
+      tags: [Contacts]
+    post:
+      summary: Create a contact
+      tags: [Contacts]
+  /api/3/contacts/{contactID}:
+    put:
+      summary: Sync (update) a contact
+      tags: [Contacts]
+  /api/3/contacts/{contactID}/activities:
+    get:
+      summary: View recent activity for a contact
+      tags: [Contacts]
+  /api/3/contacts/{contactID}/geoips:
+    get:
+      summary: Retrieve a contact's geo-IP list
+      tags: [Contacts]
+  /api/3/fields:
+    get:
+      summary: List all custom fields
+      tags: [Custom Fields]
+    post:
+      summary: Create a custom field
+      tags: [Custom Fields]
+  /api/3/fields/{fieldID}:
+    get:
+      summary: Retrieve a specific custom field
+      tags: [Custom Fields]
+  /api/3/fieldValues:
+    put:
+      summary: Update a custom field value for a contact
+      tags: [Custom Fields]
+  /api/3/deals:
+    post:
+      summary: Create a new deal
+      tags: [Deals]
+  /api/3/dealCustomFieldMeta:
+    get:
+      summary: List deal custom fields
+      tags: [Deals]
+    post:
+      summary: Create a deal custom field
+      tags: [Deals]
+  /api/3/lists:
+    post:
+      summary: Create a new list
+      tags: [Lists]
+  /api/3/campaigns:
+    post:
+      summary: Create a campaign
+      tags: [Campaigns]
+  /api/3/campaigns/{campaignID}:
+    put:
+      summary: Edit a campaign
+      tags: [Campaigns]
+  /api/3/campaigns/{campaignID}/duplicate:
+    post:
+      summary: Duplicate a campaign
+      tags: [Campaigns]
+  /api/3/messages/{messageID}:
+    put:
+      summary: Update a campaign message
+      tags: [Campaigns]
+  /api/3/variables:
+    get:
+      summary: List personalization variables
+      tags: [Variables]
+    post:
+      summary: Create a personalization variable
+      tags: [Variables]
+  /api/3/variables/{variableID}:
+    get:
+      summary: Retrieve a variable
+      tags: [Variables]
+    put:
+      summary: Edit a variable
+      tags: [Variables]
+    delete:
+      summary: Delete a variable
+      tags: [Variables]
+  /api/3/contacts/import:
+    post:
+      summary: Bulk import contacts
+      tags: [Bulk]
+  /api/3/contacts/import/{importID}/status:
+    get:
+      summary: Check the status of a bulk contact import
+      tags: [Bulk]
+  /api/3/accounts/bulk:
+    delete:
+      summary: Bulk delete accounts
+      tags: [Bulk]
+  /api/3/segments:
+    post:
+      summary: Create a segment
+      tags: [Segments]
+  /api/3/segments/{segmentID}:
+    get:
+      summary: Retrieve a segment
+      tags: [Segments]
+    put:
+      summary: Update a segment
+      tags: [Segments]
+    delete:
+      summary: Delete a segment
+      tags: [Segments]
+  /api/3/broadcasts:
+    get:
+      summary: List broadcast messages
+      tags: [Broadcasts]
+    post:
+      summary: Create an SMS broadcast message
+      tags: [Broadcasts]
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Api-Token
+security:
+  - ApiKeyAuth: []
